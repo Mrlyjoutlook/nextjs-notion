@@ -8,7 +8,7 @@ import { useSearchParam } from 'react-use'
 import BodyClassName from 'react-body-classname'
 import { PageBlock } from 'notion-types'
 
-import TweetEmbed from 'react-tweet-embed'
+// import TweetEmbed from 'react-tweet-embed'
 
 // core notion renderer
 import { NotionRenderer } from 'react-notion-x'
@@ -41,36 +41,36 @@ const Code = dynamic(() =>
   import('react-notion-x/build/third-party/code').then(async (m) => {
     // add / remove any prism syntaxes here
     await Promise.all([
-      import('prismjs/components/prism-markup-templating.js'),
-      import('prismjs/components/prism-markup.js'),
-      import('prismjs/components/prism-bash.js'),
-      import('prismjs/components/prism-c.js'),
-      import('prismjs/components/prism-cpp.js'),
-      import('prismjs/components/prism-csharp.js'),
-      import('prismjs/components/prism-docker.js'),
-      import('prismjs/components/prism-java.js'),
+      // import('prismjs/components/prism-markup-templating.js'),
+      // import('prismjs/components/prism-markup.js'),
+      // import('prismjs/components/prism-bash.js'),
+      // import('prismjs/components/prism-c.js'),
+      // import('prismjs/components/prism-cpp.js'),
+      // import('prismjs/components/prism-csharp.js'),
+      // import('prismjs/components/prism-docker.js'),
+      // import('prismjs/components/prism-java.js'),
       import('prismjs/components/prism-js-templates.js'),
       import('prismjs/components/prism-coffeescript.js'),
-      import('prismjs/components/prism-diff.js'),
+      // import('prismjs/components/prism-diff.js'),
       import('prismjs/components/prism-git.js'),
-      import('prismjs/components/prism-go.js'),
-      import('prismjs/components/prism-graphql.js'),
-      import('prismjs/components/prism-handlebars.js'),
+      // import('prismjs/components/prism-go.js'),
+      // import('prismjs/components/prism-graphql.js'),
+      // import('prismjs/components/prism-handlebars.js'),
       import('prismjs/components/prism-less.js'),
-      import('prismjs/components/prism-makefile.js'),
+      // import('prismjs/components/prism-makefile.js'),
       import('prismjs/components/prism-markdown.js'),
-      import('prismjs/components/prism-objectivec.js'),
-      import('prismjs/components/prism-ocaml.js'),
+      // import('prismjs/components/prism-objectivec.js'),
+      // import('prismjs/components/prism-ocaml.js'),
       import('prismjs/components/prism-python.js'),
-      import('prismjs/components/prism-reason.js'),
-      import('prismjs/components/prism-rust.js'),
+      // import('prismjs/components/prism-reason.js'),
+      // import('prismjs/components/prism-rust.js'),
       import('prismjs/components/prism-sass.js'),
       import('prismjs/components/prism-scss.js'),
-      import('prismjs/components/prism-solidity.js'),
-      import('prismjs/components/prism-sql.js'),
-      import('prismjs/components/prism-stylus.js'),
-      import('prismjs/components/prism-swift.js'),
-      import('prismjs/components/prism-wasm.js'),
+      // import('prismjs/components/prism-solidity.js'),
+      // import('prismjs/components/prism-sql.js'),
+      // import('prismjs/components/prism-stylus.js'),
+      // import('prismjs/components/prism-swift.js'),
+      // import('prismjs/components/prism-wasm.js'),
       import('prismjs/components/prism-yaml.js')
     ])
     return m.Code
@@ -102,9 +102,9 @@ const Modal = dynamic(
   }
 )
 
-const Tweet = ({ id }: { id: string }) => {
-  return <TweetEmbed tweetId={id} />
-}
+// const Tweet = ({ id }: { id: string }) => {
+//   return <TweetEmbed tweetId={id} />
+// }
 
 const propertyLastEditedTimeValue = (
   { block, pageHeader },
@@ -165,7 +165,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
       Equation,
       Pdf,
       Modal,
-      Tweet,
+      Tweet: null,
       Header: NotionPageHeader,
       propertyLastEditedTimeValue,
       propertyTextValue,
@@ -216,14 +216,6 @@ export const NotionPage: React.FC<types.PageProps> = ({
   }
 
   const title = getBlockTitle(block, recordMap) || site.name
-
-  console.log('notion page', {
-    isDev: config.isDev,
-    title,
-    pageId,
-    rootNotionPageId: site.rootNotionPageId,
-    recordMap
-  })
 
   if (!config.isServer) {
     // add important objects to the window global for easy debugging
