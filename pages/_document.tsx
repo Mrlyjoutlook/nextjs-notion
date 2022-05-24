@@ -15,8 +15,8 @@ export default class MyDocument extends Document {
               sizes='32x32'
               href='favicon.png'
             />
-
             <link rel='manifest' href='/manifest.json' />
+            <script src='https://hm.baidu.com/hm.js?3377e1d60578d9cc30b2336ce997fd7c' />
           </Head>
 
           <body>
