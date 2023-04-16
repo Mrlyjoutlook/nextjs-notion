@@ -1,24 +1,24 @@
-import { siteConfig } from './lib/site-config'
+import { siteConfig } from "./lib/site-config"
 
 export default siteConfig({
   // the site's root Notion page (required)
-  rootNotionPageId: 'ec8b3ccaabf848d3bc15368fb4f97f47',
+  rootNotionPageId: "49305dac8e8141b2ad500f13184d352c",
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'blog',
-  domain: 'blog.mimeso.cn',
-  author: 'lianyuanjie',
+  name: "blog",
+  domain: "blog.mimeso.cn",
+  author: "lianyuanjie",
 
   // open graph metadata (optional)
   description: null,
 
   // social usernames (optional)
   twitter: null,
-  github: 'Mrlyjoutlook',
+  github: "Mrlyjoutlook",
   linkedin: null,
 
   // default notion icon and cover images for site-wide consistency (optional)
@@ -47,7 +47,7 @@ export default siteConfig({
 
   // whether to use the default notion navigation style or a custom one with links to
   // important pages
-  navigationStyle: 'default'
+  navigationStyle: "default",
   // navigationStyle: 'custom',
   // navigationLinks: [
   //   {
